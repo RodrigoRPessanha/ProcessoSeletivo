@@ -7,6 +7,12 @@ def conectar():
     return conn
 
 
+class openDB:
+    def __init__(self) -> None:
+        self.conn = sqlite3.connect('mydatabase.db')
+        self.cursor = self.conn.cursor()
+
+
 def createTableFuncionario():
     conn = conectar()
     conn.execute('''CREATE TABLE IF NOT EXISTS FUNCIONARIOS
@@ -153,7 +159,7 @@ def insertEmbarque(dataEmbarque: datetime, dataDesembarque: datetime, idTrabalha
     conn = conectar()
     if dataDesembarque > dataEmbarque:
         if int(idTrabalhador) in idsBd:
-            conn.execute(f"INSERT INTO EMBARQUE (DATA_EMBARQUE, DATA_DESEMBARQUE, ID_FUNCIONARIO, COMENTARIO) \
+            conn.execute("INSERT INTO EMBARQUE (DATA_EMBARQUE, DATA_DESEMBARQUE, ID_FUNCIONARIO, COMENTARIO) \
                         VALUES  (?, ?, ?, ?)", (dataEmbarque, dataDesembarque, idTrabalhador, comentario))
         else:
             print(f"O id {idTrabalhador} não pertence a nenhum funcionario")
@@ -186,16 +192,16 @@ def updateEmbarque(id: int, novaDataEmbarque: datetime = None, novaDataDesembarq
     conn = conectar()
     if novaDataEmbarque:
         conn.execute(
-            f'UPDATE EMBARQUE SET DATA_EMBARQUE = {novaDataEmbarque} WHERE ID_EMBARQUE = {id}')
+            f"UPDATE EMBARQUE SET DATA_EMBARQUE = '{novaDataEmbarque}' WHERE ID_EMBARQUE = {id}")
     if novaDataDesembarque:
         conn.execute(
-            f'UPDATE EMBARQUE SET DATA_DESEMBARQUE = {novaDataDesembarque} WHERE ID_EMBARQUE = {id}')
+            f"UPDATE EMBARQUE SET DATA_DESEMBARQUE = '{novaDataDesembarque}' WHERE ID_EMBARQUE = {id}")
     if novoId:
         conn.execute(
             f'UPDATE EMBARQUE SET ID_FUNCIONARIO = {novoId} WHERE ID_EMBARQUE = {id}')
     if novoComentario:
         conn.execute(
-            f'UPDATE EMBARQUE SET COMENTARIO = {novoComentario} WHERE ID_EMBARQUE = {id}')
+            f"UPDATE EMBARQUE SET COMENTARIO = '{novoComentario}' WHERE ID_EMBARQUE = {id}")
     conn.commit()
     conn.close()
 
@@ -225,19 +231,21 @@ def selectNomeEmbarqueDesembarque():
 
     resultados2 = cursor2.fetchall()
 
-    registros2 = []
-
-    for linha2 in resultados2:
-        registro2 = {}
-        registro2['nome'] = linha2[0]
-        registro2['embarque'] = linha2[1]
-        registro2['desembarque'] = linha2[2]
-        registros2.append(registro2)
-
-    for linha in registros2:
-        print(linha)
+    registro = lista(resultados2)
     cursor2.close()
     conn.close()
+    return registro
+
+
+def lista(resultados: list):
+    registros = []
+    for linha2 in resultados:
+        registro = {}
+        registro['nome'] = linha2[0]
+        registro['embarque'] = linha2[1]
+        registro['desembarque'] = linha2[2]
+        registros.append(registro)
+    return registros
 
 
 def verificarApto(id):

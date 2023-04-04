@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="principal">
+    <file>icons/business_application_addmale_useradd_insert_add_user_client_2312.png</file>
+    <file>icons/businessapplication_edit_male_user_thepencil_theclient_negocio_2321.png</file>
+    <file>icons/delete_delete_deleteusers_delete_male_user_maleclient_2348.png</file>
+    <file>icons/male-user-search_25352.png</file>
+    <file>icons/new_window_icon_143730.png</file>
+  </qresource>
+</RCC>

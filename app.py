@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from EmbarqueTrabalhador import *
 
 app = Flask(__name__)
+# app.debug = True
 
 
 @app.route('/create/Funcionario/', methods=['POST'])
@@ -54,19 +55,20 @@ def updateFuncionarioById():
 @app.route('/create/Embarque/', methods=['POST'])
 def createEmbarque():
     data = request.get_json()
-
+    print(data)
     if not data or not 'dataEmbarque' in data or not 'dataDesembarque' in data or not 'idFuncionario' in data:
         return jsonify({'message': 'Please provide all required information.'}), 400
 
     dataEmbarque = data['dataEmbarque']
     dataDesembarque = data['dataDesembarque']
     idFuncionario = data['idFuncionario']
-    if not verificarApto(idFuncionario):
-        comentario = data['comentario']
+    comentario = data['comentario']
+    if verificarApto(idFuncionario):
+        insertEmbarque(dataEmbarque, dataDesembarque,
+                       idFuncionario, comentario)
+        return jsonify({'message': 'Embarque created successfully.'}), 201
     else:
         return jsonify({'message': f'Usuario {idFuncionario} nao esta apto para embarque.'}), 400
-    insertEmbarque(dataEmbarque, dataDesembarque, idFuncionario, comentario)
-    return jsonify({'message': 'Embarque created successfully.'}), 201
 
 
 @app.route('/select/Embarque/', methods=['GET'])
@@ -105,6 +107,11 @@ def updateEmbarqueById():
         return jsonify({'message': 'Error: embarque does not exist.'}), 404
 
     return jsonify({'message': 'Embarque updated successfully.'}), 200
+
+
+@app.route('/select/dadosCEO/', methods=['GET'])
+def selectEmbarqueNome():
+    return selectNomeEmbarqueDesembarque()
 
 
 if __name__ == '__main__':

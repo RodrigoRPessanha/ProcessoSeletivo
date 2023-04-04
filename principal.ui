@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TelaPrincipal</class>
+ <widget class="QMainWindow" name="TelaPrincipal">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>440</width>
+    <height>290</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);</string>
+   </property>
+   <widget class="QPushButton" name="selectAllEmbarqueButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>210</y>
+      <width>111</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: auto;</string>
+    </property>
+    <property name="text">
+     <string>Consultar Embarque</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addFuncButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>30</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: auto;</string>
+    </property>
+    <property name="text">
+     <string>Adicionar Funcionario </string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>10</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: auto;
+image: url(:/principal/icons/business_application_addmale_useradd_insert_add_user_client_2312.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="deleteFuncButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>90</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: auto;</string>
+    </property>
+    <property name="text">
+     <string>Remover Funcionario</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>70</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/principal/icons/delete_delete_deleteusers_delete_male_user_maleclient_2348.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>130</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/principal/icons/businessapplication_edit_male_user_thepencil_theclient_negocio_2321.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="updateFuncButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>150</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: auto;</string>
+    </property>
+    <property name="text">
+     <string>Editar Funcionario</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="deleteEmbarqueButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>90</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: auto;</string>
+    </property>
+    <property name="text">
+     <string>Remover Embarque</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="updateEmbarqueButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>150</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: auto;</string>
+    </property>
+    <property name="text">
+     <string>Editar Embarque</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addEmbarqueButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>30</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: auto;</string>
+    </property>
+    <property name="text">
+     <string>Adicionar Embarque</string>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>100</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>130</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/principal/icons/businessapplication_edit_male_user_thepencil_theclient_negocio_2321.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_17">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>190</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/principal/icons/male-user-search_25352.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>10</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: auto;
+image: url(:/principal/icons/business_application_addmale_useradd_insert_add_user_client_2312.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_18">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>70</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/principal/icons/delete_delete_deleteusers_delete_male_user_maleclient_2348.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>440</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuA">
+    <property name="title">
+     <string>A</string>
+    </property>
+    <addaction name="actionCadastrarFuncionario"/>
+   </widget>
+   <addaction name="menuA"/>
+  </widget>
+  <action name="actionCadastrarFuncionario">
+   <property name="icon">
+    <iconset resource="principal_resource.qrc">
+     <normaloff>:/principal/icons/business_application_addmale_useradd_insert_add_user_client_2312.png</normaloff>:/principal/icons/business_application_addmale_useradd_insert_add_user_client_2312.png</iconset>
+   </property>
+   <property name="text">
+    <string>CadastrarFuncionario</string>
+   </property>
+   <property name="toolTip">
+    <string>Cadastrar um Funcionario</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionEditar_Funcionario">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="principal_resource.qrc">
+     <normaloff>:/principal/icons/businessapplication_edit_male_user_thepencil_theclient_negocio_2321.png</normaloff>:/principal/icons/businessapplication_edit_male_user_thepencil_theclient_negocio_2321.png</iconset>
+   </property>
+   <property name="text">
+    <string>Editar Funcionario</string>
+   </property>
+   <property name="toolTip">
+    <string>Editar um Funcionário</string>
+   </property>
+  </action>
+  <action name="actionExcluir_Funcionario">
+   <property name="icon">
+    <iconset resource="principal_resource.qrc">
+     <normaloff>:/principal/icons/delete_delete_deleteusers_delete_male_user_maleclient_2348.png</normaloff>:/principal/icons/delete_delete_deleteusers_delete_male_user_maleclient_2348.png</iconset>
+   </property>
+   <property name="text">
+    <string>Excluir Funcionario</string>
+   </property>
+   <property name="toolTip">
+    <string>Excluir um Funcionário</string>
+   </property>
+  </action>
+  <action name="actionConsultar_Funcionarios">
+   <property name="icon">
+    <iconset resource="principal_resource.qrc">
+     <normaloff>:/principal/icons/male-user-search_25352.png</normaloff>:/principal/icons/male-user-search_25352.png</iconset>
+   </property>
+   <property name="text">
+    <string>Consultar Funcionarios</string>
+   </property>
+   <property name="toolTip">
+    <string>Consultar todos os funcionários</string>
+   </property>
+  </action>
+  <action name="actionadd">
+   <property name="text">
+    <string>add</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="principal_resource.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionCadastrarFuncionario</sender>
+   <signal>triggered()</signal>
+   <receiver>addFuncButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>155</x>
+     <y>62</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
